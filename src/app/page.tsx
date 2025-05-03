@@ -85,7 +85,7 @@ export default function Home() {
         Akatsuki Unleashed is an exclusive collection of 10,000 unique NFTs. Owning one of these NFTs grants you access to the private Akatsuki FNF group—an elite "trench group" of seasoned crypto traders. This community offers insights, strategies, and networking opportunities for those looking to elevate their crypto trading to the next level. 
         </p>
         <p className='text-border-akatsukiRed text-title text-center max-w-xl'>
-          CHECK OUT THE <Link href='/Mint' className='text-white underline'>Mint Now</Link> TO MINT YOUR AKATSUKI UNLEASHED NFT!
+          CHECK OUT THE <Link href='/mint' className='text-white underline'>Mint</Link> TO MINT YOUR AKATSUKI UNLEASHED NFT!
         </p>
 
         {/* Info-boks */}
@@ -178,7 +178,7 @@ export default function Home() {
             </AccordionItem>
             <AccordionItem
               key="2"
-              title="WHAT IS THE Akatsuki Unleashed telegram channer?"
+              title="WHAT IS THE Akatsuki Unleashed telegram channel?"
               indicator={({ isOpen }) => (isOpen ? <FaMinus /> : <FaPlus />)}
               className='border-b-4 border-akatsukiRed'
             >

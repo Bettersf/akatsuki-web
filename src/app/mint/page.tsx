@@ -332,7 +332,7 @@ export default function Home() {
                     <div className='w-full absolute bottom-[-30px] flex items-center justify-center' onClick={() => onMint()}>
                       {mintState != "NOT_STARTED" && mintState != "ENDED" ? (
                         <div className='w-[100px] cursor-pointer rounded-full'>
-                          <CircularProgressbar value={itemsMinted/itemsAvailable*100} text="Mint" strokeWidth = {11} styles={
+                          <CircularProgressbar value={itemsMinted/itemsAvailable*100} text="Mint" strokeWidth = {0} styles={
                             buildStyles({
                               textSize: '35px',
                               backgroundColor: "#0E263C",
