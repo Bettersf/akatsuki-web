@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Solkongz',
-  description: 'The vision of the project is to allow users to earn by minting.'
+  title: 'Akatsuki Unleashed',
+  description: 'The Akatsuki Unleashed NFT Collection grants exclusive access to the Private Akatsuki FNF Group, an elite "trench group" of crypto traders. '
 }
 
 

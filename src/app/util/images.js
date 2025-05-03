@@ -1,14 +1,12 @@
 const assets = [
-    {url:'https://assets-global.website-files.com/6358359a8c87f073fb0540bb/6358359a8c87f02e0c054133_Love%20Kong.png', title: 'Love Kong'},
-    {url:'https://assets-global.website-files.com/6358359a8c87f073fb0540bb/6358359a8c87f04816054137_Demon%20Kong.png', title: 'Demon Kong'},
-    {url:'https://assets-global.website-files.com/6358359a8c87f073fb0540bb/6358359a8c87f02c9b054118_Hacker_Kong.jpg', title: 'Hacker Kong'},
-    {url:'https://assets-global.website-files.com/6358359a8c87f073fb0540bb/6358359a8c87f06ce7054125_Samurai_Kong.jpg', title: 'Samurai Kong'},
-    {url:'https://assets-global.website-files.com/6358359a8c87f073fb0540bb/6358359a8c87f0c5b905413a_Astronaut%20Kong.png', title: 'Astronaut Kong'},
-    {url:'https://assets-global.website-files.com/6358359a8c87f073fb0540bb/6358359a8c87f00223054136_Lava%20Kong.png', title: 'Lava Kong'},
-    {url:'https://assets-global.website-files.com/6358359a8c87f073fb0540bb/6358359a8c87f035c805413c_1829.png', title: 'Ice Kong'},
-    {url:'https://assets-global.website-files.com/6358359a8c87f073fb0540bb/6358359a8c87f0fd09054130_Racer%20Kong.png', title: 'Racer Kong'},
-    {url:'https://assets-global.website-files.com/6358359a8c87f073fb0540bb/6358359a8c87f067bd054142_Undead%20Kong.png', title: 'Undead Kong'},
-    {url:'https://assets-global.website-files.com/6358359a8c87f073fb0540bb/6358359a8c87f0852905413b_Shark%20Kong.png', title: 'Shark Kong'},
+    {url:'https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafybeig3ovcifncbn7ekedxutgjpqxyjleq3eu6cjub4fevp376ai3xat4', title: 'Paradox'},
+    {url:'https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafkreig7cdjpdb63brkv4biegogjjfa3ekou5evfhek3vnmxbzioveuk3m', title: 'Badger'},
+    {url:'https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafkreihvlfkgceoagcukrkzi6osctvswfesfv75xukndpwnfzjhqfjwblm', title: 'Itatchi'},
+    {url:'https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafkreidwfk2ilhydtf5h6dqiruuabj4vttdyuuy5z7fxws3htyh272wjb4', title: 'Akatsuki'},
+    {url:'https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafkreiafjalno5ba7omouhsmfknhejp73gzd42ogqo2ytwnjfpcheijsfq', title: 'Chilling Itatchi'},
+    {url:'https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafkreiak4mtp7hi2l344w5jqq6wp7fsj2xd6udoc76jopaibfbykv6qtdy', title: 'Tanjiro'},
+    {url:'https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafkreifv6e5wrhfzzkxpkxoryuowo47wjujbqhrw3pi3ovf7dxlutd5hde', title: 'Obito'},
+    {url:'https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafkreiehhrqx6iydek3skaeypybtfd63bhdxzwedoqj7zo5644c7bfgv3m', title: 'Eyes'},
 ]
 
 export default assets

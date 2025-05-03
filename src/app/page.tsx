@@ -1,195 +1,164 @@
 "use client"
+
+import Team from './components/team'
 import Image from 'next/image'
 import ScholashipBtn from './component/ScholashipBtn'
 import Link from 'next/link'
-// import { useRouter } from 'next/router';
-import assets from './util/images';
-import { FaAlignJustify, FaHouse, FaPlus, FaMinus, FaAngleLeft, FaAngleRight, FaXTwitter } from "react-icons/fa6";
-import { useEffect, useState } from 'react';
-import { Accordion, AccordionItem } from "@nextui-org/react";
-import { Carousel } from '@trendyol-js/react-carousel'; 
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/navigation';
-
-// import required modules
-import { Pagination,  Keyboard, Navigation, } from 'swiper/modules';
+import assets from './util/images'
+import { FaAlignJustify, FaPlus, FaMinus, FaXTwitter } from "react-icons/fa6"
+import { useState, useEffect } from 'react'
+import { Accordion, AccordionItem } from "@nextui-org/react"
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
+import 'swiper/css/navigation'
+import { Pagination, Keyboard, Navigation } from 'swiper/modules'
 
 export default function Home() {
   const [isOpen, setOpen] = useState(false);
-  // const router = useRouter();
+  const [isSticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticky(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const itemClasses = {
     base: "py-0 w-full ",
-    title: "text-borderYellow text-content sm:text-title w-full text-white data-[open=true]:text-borderYellow text_shadow",
+    title: "text-border-akatsukiRed text-content sm:text-title w-full text-white data-[open=true]:text-border-akatsukiRed text_shadow",
     trigger: "px-2 py-0 rounded-lg h-14 flex justify-between items-center",
-    indicator: "text-borderYellow",
+    indicator: "text-border-akatsukiRed",
     content: "text-small px-2",
   };
 
   return (
-    <div className='w-full bg-bgColor font-ShPinscher'>
-      {/* --------------------------------- Header --------------------------------- */}
-      <div className='w-full flex flex-col justify-center items-center relative'>
-        <div className='w-5/6 md:w-2/3 flex justify-between mt-8 h-[40px]'>
-          <ScholashipBtn content="APPLY FOR A SCHOLARSHIP" url="/contact" />
+    <div className="w-full min-h-screen font-ShPinscher bg-transparent relative">
+      <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
+      <h1 className="akatsuki-title relative z-10 animate-fade-in">AKATSUKI UNLEASHED</h1>
+
+      {/* Header */}
+      <div className={`w-full flex flex-col justify-center items-center fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isSticky ? 'bg-black bg-opacity-80 shadow-lg' : 'bg-transparent'}`}>
+        <div className='w-5/6 md:w-2/3 flex justify-between mt-4 h-[40px]'>
+          <ScholashipBtn content="APPLY FOR Membership" url="/contact" />
           <div className='hidden md:flex justify-between gap-6 text-white text-content'>
-            <Link href="/kongzdao" className='hover:border-b-4 hover:border-darkYello pb-1 duration-200'>Kongz Dao</Link>
-            <Link href="/shop" className='hover:border-b-4 hover:border-darkYello pb-1 duration-200'>Shop</Link>
-            <Link href="https://twitter.com/solkongz" className='hover:border-b-4 hover:border-darkYello pb-1 duration-200'>Twitter</Link>
-            <Link href="https://discord.gg/hrQX37Cs" className='hover:border-b-4 hover:border-darkYello pb-1 duration-200'>Discord</Link>
+            <Link href="/mint" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Mint</Link>
+            <Link href="/shop" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Shop</Link>
+            <Link href="https://x.com/UnleashedFNF" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Twitter</Link>
+            <Link href="https://t.me/AkatsukiCalls_Sol" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Telegram</Link>
           </div>
           <div
             onClick={() => setOpen(!isOpen)}
-            className='flex md:hidden justify-center items-center bg-white p-3 rounded-[10px] border-[1px] border-[#000] w-[32] sm:w-[50px] text-black hover:bg-btnYellow cursor-pointer'
+            className='flex md:hidden justify-center items-center bg-white p-3 rounded-[10px] border-[1px] border-[#FF0000] w-[32] sm:w-[50px] text-black hover:bg-btnYellow cursor-pointer'
           >
             <FaAlignJustify className="w-[16px] h-[16px]" />
           </div>
           {isOpen && (
-            <div className='absolute w-full bg-bgColor top-[4.6rem] left-0 p-4 text-white flex md:hidden flex-col gap-4'>
-              <Link href="/kongzdao" className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Kongz Dao</Link>
-              <Link href="/shop" className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Shop</Link>
-              <Link href="https://twitter.com/solkongz" className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Twitter</Link>
-              <Link href="https://discord.gg/hrQX37Cs" className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Discord</Link>
+            <div className='absolute w-full bg-black bg-opacity-90 top-[4.6rem] left-0 p-4 text-white flex md:hidden flex-col gap-4 z-20'>
+              <Link href="/mint" className='text-center hover:bg-[#907848] duration-300'>Mint</Link>
+              <Link href="/shop" className='text-center hover:bg-[#907848] duration-300'>Shop</Link>
+              <Link href="https://x.com/UnleashedFNF" className='text-center hover:bg-[#907848] duration-300'>Twitter</Link>
+              <Link href="https://t.me/AkatsukiCalls_Sol" className='text-center hover:bg-[#907848] duration-300'>Telegram</Link>
             </div>
           )}
         </div>
       </div>
-      {/* --------------------------------- Header End ----------------------------- */}
-      <div className='w-full flex justify-center items-center'>
+
+      {/* Logo */}
+      <div className='pt-[100px] w-full flex justify-center items-center relative z-10 animate-fade-in'>
         <div className='w-full md:w-4/5 flex justify-center'>
-          <img src='/img/KongzDAObySolKongzV2-noBG.png' />
+        <img
+        src='/img/KongzDAObySolKongzV2-noBG.png'
+        alt='Akatsuki Logo'
+        className='drop-shadow-[0_0_12px_white] glitch-logo'
+        />
+
         </div>
       </div>
-      {/* --------------------------------- Body ----------------------------------- */}
 
-      <div className='w-full flex flex-col justify-between items-center gap-20'>
-        <p className='text-white text-content text-center px-2'>{`The SOLKONGZ is a collection of 2,222 NFTs that grant the holder exclusive access to 'The Jungle' and the strong community of degenerates that call it home.`}</p>
-        <p className='text-borderYellow text-title text-center'>CHECK OUT THE <Link href='/kongzdao' className='text-white underline'>KONGZ DAO</Link>  PAGE FOR THE LATEST UPDATES ON THE PROJECT!</p>
-        <div className='w-4/5 md:w-2/3 border-1 border-[1px] border-white rounded-[10px] border-dotted p-[25px] md:p-[50px] flex flex-col gap-6 text-white text-content'>
-          <p>Dear Kongz</p>
-          <p>I hope this letter finds you in good health and high spirits, even during these confusing market conditions. But fuck the bears, we are The Kongz and we have some exciting news.</p>
-          <p>[No Roadmap, Pure Fun] <br />
-            {`In keeping with our community's adventurous spirit, we have decided to take a bold step by not providing a traditional roadmap. Instead, we are placing our trust in the collective wisdom and creativity of the SolKongz community. We believe that by relinquishing some control, we can foster a more dynamic and exciting environment where the possibilities are endless.`}
-          </p>
-          <p>[New Art] <br />
-            {`The new art will go by the name of KongzDAO, and it is a testament to our original art and community. We have curated a whole new collection of NFTs, that not only reflect the spirit of 'crypto culture' but also remains in line with our OG branding and values. With a brand new look and an important role to play in the SolKongz ecosystem, each unique Kong is a masterpiece in its own right.`}
-          </p>
-          <p>Our main vision with KongzDAO goes beyond just creating NFTs — we plan to introduce a transformative element to the SolKongz ecosystem, a catalyst in a self-sustaining universe where each exchange subtly contributes to the vitality and growth of our community. Interwoven with a unique mechanism, this  plays a pivotal role in nurturing the network and offering rewards to those embarking on this journey with us.</p>
-          <p>{`Our approach isn't solely about creating value; it's also about fostering a prosperity within ‘The Jungle’.As we embark on this journey together, we want to reaffirm our community values of crypto culture, brotherhood, and having a blast while pursuing financial gains. These principles have been the bedrock of SolKongz, and they will continue to guide us into this new era of the Kongz.
-          Our next plan of action will be dropped shortly.And we kinda forgot we to mention... we airdropped 268 WL tokens to all the OGs that participated in the snapshot. Check your wallets and thank you for your loyalty.
-          Kongz Team`}</p>
+      {/* NFT Introduksjon */}
+      <div className='w-full flex flex-col justify-between items-center gap-20 relative z-10 mt-12 px-4'>
+        <p className='text-white text-content text-center max-w-3xl'>
+        Akatsuki Unleashed is an exclusive collection of 10,000 unique NFTs. Owning one of these NFTs grants you access to the private Akatsuki FNF group—an elite "trench group" of seasoned crypto traders. This community offers insights, strategies, and networking opportunities for those looking to elevate their crypto trading to the next level. 
+        </p>
+        <p className='text-border-akatsukiRed text-title text-center max-w-xl'>
+          CHECK OUT THE <Link href='/Mint' className='text-white underline'>Mint Now</Link> TO MINT YOUR AKATSUKI UNLEASHED NFT!
+        </p>
+
+        {/* Info-boks */}
+        <div className='w-full max-w-3xl border border-akatsukiRed rounded-[10px] border-dotted p-[30px] text-white text-content bg-black bg-opacity-40 backdrop-blur'>
+          <p className="mb-4 font-bold">Dear Trenchers</p>
+          <p className="mb-4">The Akatsuki Unleashed NFT Collection grants exclusive access to the Private Akatsuki FNF Group, an elite "trench group" of crypto traders.</p>
+          <p className="mb-4 font-bold">[Membership Nfts]</p>
+          <p className="mb-4">these NFTs unlock membership to a high-caliber, members-only community where top traders share exclusive insights, strategies, and market analysis.</p>
+          <p className="mb-4 font-bold">[New Art]</p>
+          <p className="mb-4">Inspired by the iconic Akatsuki, this group offers unparalleled networking and trading opportunities for serious investors.</p>
+          <p>Secure your NFT pack to join the trenches and elevate your crypto game!</p>
         </div>
-        <div className='w-4/5 border-1 border-[6px] border-borderYellow rounded-[10px] p-[20px] md:p-[30px] flex flex-col items-center gap-4 text-white'>
-          <div className='text-[38px] text_shadow' >RARITY</div>
-          <p>Each NFT is algorithmically generated by combining 96+ unique traits with varying rarity across categories.</p>
-          <div className='flex flex-col md:flex-row  justify-between gap-2 w-full '>
-            <div className='flex flex-col gap-2 w-full md:w-1/2'>
-              <p className='text-title'>Type</p>
-              <table>
-                <tbody className='leading-8 border-spacing-2'>
-                  <tr className="odd:bg-darkYellow">
-                    <td className='w-1/2'>2,222</td>
-                    <td>Total SolKongz</td>
-                  </tr>
-                  <tr className="odd:bg-darkYellow">
-                    <td className='w-1/2'>18</td>
-                    <td>1/1 Legandary Kongz</td>
-                  </tr>
+
+        {/* Rarity */}
+        <div className='w-full max-w-4xl border-[6px] border-akatsukiRed rounded-[10px] p-6 flex flex-col items-center gap-6 text-white bg-black bg-opacity-40 backdrop-blur'>
+          <h2 className='text-[38px] text_shadow'>RARITY</h2>
+          <p className='text-center'>Each NFT is algorithmically generated by combining 96+ unique traits across categories.</p>
+
+          <div className='flex flex-col md:flex-row gap-4 w-full'>
+            <div className='flex-1'>
+              <p className='text-title mb-2'>Type</p>
+              <table className='w-full'>
+                <tbody>
+                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>10,000</td><td>Total Akatsuki Unleashed</td></tr>
+                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>10</td><td>1/1 Legendary Akatsukis</td></tr>
                 </tbody>
               </table>
             </div>
-            <div className='flex flex-col gap-2 w-full md:w-1/2 odd:bg-darkYello'>
-              <p className='text-title'>Variation</p>
-              <table>
-                <tbody className='leading-8'>
-                  <tr className="odd:bg-darkYellow">
-                    <td className='w-1/2'>Fur Color</td>
-                    <td>Head Traits</td>
-                  </tr>
-                  <tr className="odd:bg-darkYellow">
-                    <td className='w-1/2'>Eye Traits</td>
-                    <td>Mouth Traits</td>
-                  </tr>
-                  <tr className="odd:bg-darkYellow">
-                    <td className='w-1/2'>21</td>
-                    <td>Torso Traits</td>
-                  </tr>
-                  <tr className="odd:bg-darkYellow">
-                    <td className='w-1/2'>Torso Traits</td>
-                    <td>Background</td>
-                  </tr>
+            <div className='flex-1'>
+              <p className='text-title mb-2'>Variation</p>
+              <table className='w-full'>
+                <tbody>
+                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>Bodies</td><td>Clothing</td></tr>
+                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>Eyes</td><td>Hats</td></tr>
+                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>Hair</td><td>Mouth</td></tr>
+                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>Hair Back Layers</td><td>Background</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-        <p className='text-[38px] text-borderYellow text_shadow'>1/1 Legendary Kongz</p>
 
-        
+        {/* Swiper - NFT Showcase */}
+        <h2 className='text-[38px] text-border-White text_shadow'>Gallery</h2>
         <Swiper
           slidesPerView={2}
           centeredSlides={false}
-          slidesPerGroupSkip={1}
           grabCursor={true}
-          keyboard={{
-            enabled: true,
-          }}
+          keyboard={{ enabled: true }}
           navigation={true}
-          pagination={{
-            clickable: true,
-          }}
+          pagination={{ clickable: true }}
           modules={[Keyboard, Navigation, Pagination]}
-          className="mySwiper"                   
-      >
-        {
-        assets.map((val, index) => {
-          return <SwiperSlide key={val.url+"1"}>
-            <div className='img_wraper relative'>
-              <img src={val.url} alt="" className='rounded-[15px] border-8 border-borderYellow pink_shadow' />
-              <div className='absolute w-full flex justify-center items-center bottom-[-25px]'>
-                  <button className=' pink_shadow text-white rounded-[10px] border-[6px] border-borderYellow px-4 bg-bgColor text-[18px] sm:text-[38px]'>{val.title}</button>
+          className="mySwiper w-full max-w-5xl"
+        >
+          {assets.map((val, index) => (
+            <SwiperSlide key={val.url}>
+              <div className='img_wraper relative'>
+                <img src={val.url} alt={val.title} className='rounded-[15px] border-8 border-akatsukiRed pink_shadow' />
+                <div className='absolute w-full flex justify-center items-center bottom-[-25px]'>
+                  <button className='pink_shadow text-white rounded-[10px] border-[6px] border-akatsukiRed px-4 bg-bgColor text-[18px] sm:text-[38px]'>
+                    {val.title}
+                  </button>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-        })
-        }
-      </Swiper>
-        <div className='w-full relative overflow-hidden'>
-          <img src='https://assets-global.website-files.com/6358359a8c87f073fb0540bb/6358359a8c87f04f39054152_unknown-p-2000.png' width={100} height={70} className='w-full' alt='noimage'></img>
-          <img src='https://assets-global.website-files.com/6358359a8c87f073fb0540bb/6358359a8c87f0848e054151_unkno5668wn-p-500.png' className='bottom-0 md:bottom-9 right-0 md:right-5 absolute border-[6px] border-white rounded-xl w-1/3 lg:w-1/4 box_shadow' />
-        </div>
-        <p className='text-[38px] text-borderYellow text_shadow'>MEET THE NEW TEAM</p>
-        <div className='flex flex-col md:flex-row justify-around w-full p-2 gap-5'>
-          <div className='flex flex-col gap-10 w-full md:w-1/4 justify-between items-center'>
-            <div className='relative dashoboard__teamimg'>
-              <img src='/img/team/kef.gif' className='box_shadow border-[3px] border-borderYellow' />
-              <p className=' box_shadow text-white text-content absolute border-[1px] border-borderYellow bottom-[-1rem] bg-bgColor p-2 left-[calc(50%-2.8rem)]'>KEFARSKEN</p>
-            </div>
-            <Link href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fwww.solkongz.net%2F&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Efollow%7Ctwgr%5Ekefarsken&region=follow_link&screen_name=kefarsken" className="h-8 duration-300 text-borderYellow border-[1px] border-borderYellow rounded-[10px] px-3 py-1 hover:bg-[#907848] hover:text-[#132a3b] text-center flex justify-center items-center w-1/2"><FaXTwitter /> FOLLOW KEFARSKEN</Link>
-          </div>
-          <div className='flex flex-col gap-10 w-full md:w-1/4 justify-between items-center'>
-            <div className='relative dashoboard__teamimg'>
-              <img src='/img/team/nate.gif' className='box_shadow border-[3px] border-borderYellow' />
-              <p className='box_shadow text-white text-content absolute border-[1px] border-borderYellow bottom-[-1rem] bg-bgColor p-2 left-[calc(50%-2.0rem)]'>NATE</p>
-            </div>
-            <Link href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fwww.solkongz.net%2F&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Efollow%7Ctwgr%5Ec0gnate&region=follow_link&screen_name=c0gnate" className="h-8 duration-300 text-borderYellow border-[1px] border-borderYellow rounded-[10px] px-3 py-1 hover:bg-[#907848] hover:text-[#132a3b] text-center flex justify-center items-center w-1/2"><FaXTwitter /> FOLLOW Nate</Link>
-          </div>
-          <div className='flex flex-col gap-10 w-full md:w-1/4 justify-between items-center'>
-            <div className='relative dashoboard__teamimg'>
-              <img src='/img/team/cutrab.gif' className='box_shadow border-[3px] border-borderYellow' />
-              <p className='box_shadow text-white text-content absolute border-[1px] border-borderYellow bottom-[-1rem] bg-bgColor p-2 left-[calc(50%-2.0rem)]'>Cutrab</p>
-            </div>
-            <Link href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fwww.solkongz.net%2F&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Efollow%7Ctwgr%5Esolkongz&region=follow_link&screen_name=solkongz" className="h-8 duration-300 text-borderYellow border-[1px] border-borderYellow rounded-[10px] px-3 py-1 hover:bg-[#907848] hover:text-[#132a3b] text-center flex justify-center items-center w-1/2"><FaXTwitter /> FOLLOW SolKongz</Link>
-          </div>
-        </div>
+        <Team />
+
+        {/* FAQ */}
         <div className='w-full sm:w-2/3'>
-          <p className='text-[45px] text-borderYellow text_shadow pl-2'>FAQ</p>
-
+          <h2 className='text-[45px] text-border-akatsukiRed text_shadow mb-4'>FAQ</h2>
           <Accordion
             showDivider={false}
             className="p-2 flex flex-col gap-1 w-full"
@@ -198,40 +167,55 @@ export default function Home() {
           >
             <AccordionItem
               key="1"
-              aria-label="how can i join solkongz"
-              title="HOW CAN I JOIN SOLKONGZ"
+              aria-label="how can i join Akatsuki Unleashed"
+              title="HOW CAN I JOIN AkATSUKI UNLEASHED"
               indicator={({ isOpen }) => (isOpen ? <FaMinus /> : <FaPlus />)}
-              className='border-b-4 border-[#09364A]'
+              className='border-b-4 border-akatsukiRed'
             >
-              <p className='text-content text-white '>You can acquire a SOLKONG either through secondary marketplaces like <Link href="https://magiceden.io/marketplace/solkongz" className='text-borderYellow underline' >Magic Eden</Link> , <Link href="https://solsea.io/c/620fd1cc5f38c6260eb65ca1" className='text-borderYellow underline'>OpenSea</Link>  and SolSea OR you can apply to our <Link href="/contact" className='text-borderYellow underline'>Scholarship program</Link> . You might even get lucky in one of our giveaways </p>
+              <p className='text-content text-white'>
+                You can acquire a Akatsuki Nft on <Link href="https://magiceden.io/marketplace/" className='text-border-akatsukiRed underline'>Magic Eden</Link>, <Link href="https://solsea.io" className='text-akatsukiRed underline'>SolSea</Link>, or join via <Link href="/contact" className='text-border-akatsukiRed underline'>Apply Membership</Link>.
+              </p>
             </AccordionItem>
             <AccordionItem
               key="2"
-              aria-label="how can i join solkongz"
-              title="WHAT IS THE TREEHOUSE"
+              title="WHAT IS THE Akatsuki Unleashed telegram channer?"
               indicator={({ isOpen }) => (isOpen ? <FaMinus /> : <FaPlus />)}
-              className='border-b-4 border-[#09364A]'
-
+              className='border-b-4 border-akatsukiRed'
             >
-              <p className='text-content text-white '>The Treehouse is an exclusive corner of the Jungle where all of the SOLKONGZ gather to socialize and share their knowledge/creations. The KONGZ are a solid tribe of gorillas that take care of one another to provide a safe-haven to grow within the mysterious Solana Jungle. This will also serve as a platform we can expand and add utility to in the future.</p>
+              <p className='text-content text-white'>The Akatsuki Unleashed Telegram channel is a Private elite "trench group" of crypto traders</p>
             </AccordionItem>
             <AccordionItem
               key="3"
-              aria-label="how can i join solkongz"
               title="WHAT'S NEXT"
               indicator={({ isOpen }) => (isOpen ? <FaMinus /> : <FaPlus />)}
+              className='border-b-4 border-akatsukiRed'
             >
-              <p className='text-content text-white '>Keep an eye on our <Link href="https://twitter.com/SolKongz" className='text-borderYellow underline'>Twitter</Link> . We will be releasing more updates very soon.</p>
+              <p className='text-content text-white'>Watch Itatchis <Link href="https://x.com/UnleashedFNF" className='text-border-akatsukiRed underline'>Twitter</Link> for upcoming plans.</p>
             </AccordionItem>
           </Accordion>
         </div>
+
+        {/* Footer */}
         <div className='flex flex-col justify-center items-center gap-1 py-6'>
-          <ScholashipBtn content="JOIN THE GANG" url="https://magiceden.io/marketplace/solkongz" />
-          <Link href="http://creativecommons.org/publicdomain/zero/1.0/" className='mt-6'><img src='https://licensebuttons.net/p/zero/1.0/88x31.png' /></Link>
-          <p className='text-[#555] mb-5'>To the extent possible under law, The SolKongz Team has waived all copyright and related or neighboring rights to SolKongz.</p>
+          <ScholashipBtn content="JOIN THE GANG" url="https://magiceden.io/marketplace/" />
+          <Link href="http://creativecommons.org/publicdomain/zero/1.0/" className='mt-6'>
+            <img src='https://licensebuttons.net/p/zero/1.0/88x31.png' alt='cc0' />
+          </Link>
+          <p className='text-White text-sm text-center max-w-md'>
+            The Akatsuki Unleashed Team has waived all copyright and related or neighboring rights to Akatsuki nfts.
+          </p>
         </div>
       </div>
-      {/* --------------------------------- Body End-------------------------------- */}
+      <div className="fixed bottom-4 right-4 z-50">
+  <iframe
+    src="https://open.spotify.com/embed/track/1Ju2lYlvXnvXe3r3QC9sJH"
+    width="300"
+    height="80"
+    frameBorder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+  />
+</div>
     </div>
   )
 }

@@ -45,16 +45,16 @@ export default function Home() {
             <div className='w-full flex flex-col justify-center items-center relative'>
                 <div className='w-5/6 flex justify-between mt-8 h-[40px]'>
                     <div className='flex gap-1'>
-                        <ScholashipBtn content = "BACK TO THE JUNGLE" url = "/" />
+                        <ScholashipBtn content = "Get exclusive access to the Private Akatsuki FNF Group" url = "/" />
                         <div className='hidden md:flex'>
-                            <WalletMultiButton style={{color: '#FFAB24', height: "32px", border: "1px solid #FFAB24", borderRadius: "10px", backgroundColor: "transparent", fontSize: '15px', fontFamily: "SHPinscher, sans-serif'"}} />
+                            <WalletMultiButton style={{color: '#FFAB24', height: "32px", border: "1px solidrgb(250, 22, 18)", borderRadius: "10px", backgroundColor: "transparent", fontSize: '15px', fontFamily: "SHPinscher, sans-serif'"}} />
                         </div>
                     </div>
                     
                     <div className='hidden md:flex justify-between gap-6 text-white text-content'>
-                        <Link href = "/kongzdao" className='hover:border-b-4 hover:border-darkYello pb-1 duration-200'>Kongz Dao</Link>
-                        <Link href = "https://twitter.com/solkongz" className='hover:border-b-4 hover:border-darkYello pb-1 duration-200'>Twitter</Link>
-                        <Link href = "https://discord.gg/hrQX37Cs" className='hover:border-b-4 hover:border-darkYello pb-1 duration-200'>Discord</Link>
+                        <Link href = "/mint" className='hover:border-b-4 hover:border-darkYello pb-1 duration-200'>Mint</Link>
+                        <Link href = "https://x.com/UnleashedFNF" className='hover:border-b-4 hover:border-darkYello pb-1 duration-200'>Twitter</Link>
+                        <Link href = "https://t.me/AkatsukiCalls_Sol" className='hover:border-b-4 hover:border-darkYello pb-1 duration-200'>Telegram</Link>
                     </div>
                     <div
                         onClick={() => setOpen(!isOpen)}
@@ -65,11 +65,11 @@ export default function Home() {
                     {isOpen && (
                         <div className='absolute w-full bg-bgColor top-[5rem] left-0 p-4 text-white flex md:hidden flex-col gap-4'>
                             <div className='w-full flex justify-center'>
-                                <WalletMultiButton style={{color: '#FFAB24', height: "32px", border: "1px solid #FFAB24", borderRadius: "10px", backgroundColor: "transparent", fontSize: '15px', fontFamily: "SHPinscher, sans-serif'"}} />
+                                <WalletMultiButton style={{color: ':rgb(255, 71, 25)', height: "32px", border: "1px solidrgb(250, 22, 18)", borderRadius: "10px", backgroundColor: "transparent", fontSize: '15px', fontFamily: "SHPinscher, sans-serif'"}} />
                             </div>
-                            <Link href="/kongzdao"className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Kongz Dao</Link>
-                            <Link href="https://twitter.com/solkongz" className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Twitter</Link>
-                            <Link href="https://discord.gg/hrQX37Cs" className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Discord</Link>
+                            <Link href="/mint"className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Mint</Link>
+                            <Link href="https://x.com/UnleashedFNF" className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Twitter</Link>
+                            <Link href="https://t.me/AkatsukiCalls_Sol" className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Telegram</Link>
                         </div>
                     )}
                 </div>
@@ -80,7 +80,7 @@ export default function Home() {
             <div className='w-full flex justify-center items-center gap-20 pb-14 mt-12'>
                 <div className='w-2/3 flex'>
                     <div className='flex flex-col'>
-                        <p className='text-title text-borderYellow'> SOLKONGZ OG HOODIE</p>
+                        <p className='text-title text-borderYellow'> Akatuki Unleashed Membership</p>
                         <p className='text-title text-white'> 1 $SOL EACH</p>
                     </div>
                     
