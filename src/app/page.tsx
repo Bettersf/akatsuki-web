@@ -46,7 +46,7 @@ export default function Home() {
           <ScholashipBtn content="APPLY FOR Membership" url="/contact" />
           <div className='hidden md:flex justify-between gap-6 text-white text-content'>
             <Link href="/mint" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Mint</Link>
-            <Link href="/shop" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Shop</Link>
+            <Link href="https://casino.akatsuki-unleashed.fun/" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Casino</Link>
             <Link href="https://x.com/UnleashedFNF" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Twitter</Link>
             <Link href="https://t.me/AkatsukiCalls_Sol" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Telegram</Link>
           </div>
@@ -59,7 +59,7 @@ export default function Home() {
           {isOpen && (
             <div className='absolute w-full bg-black bg-opacity-90 top-[4.6rem] left-0 p-4 text-white flex md:hidden flex-col gap-4 z-20'>
               <Link href="/mint" className='text-center hover:bg-[#907848] duration-300'>Mint</Link>
-              <Link href="/shop" className='text-center hover:bg-[#907848] duration-300'>Shop</Link>
+              <Link href="https://casino.akatsuki-unleashed.fun/" className='text-center hover:bg-[#907848] duration-300'>Casino</Link>
               <Link href="https://x.com/UnleashedFNF" className='text-center hover:bg-[#907848] duration-300'>Twitter</Link>
               <Link href="https://t.me/AkatsukiCalls_Sol" className='text-center hover:bg-[#907848] duration-300'>Telegram</Link>
             </div>
