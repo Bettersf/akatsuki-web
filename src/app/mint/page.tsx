@@ -296,6 +296,9 @@ export default function Home() {
                     <Link href="/mint" className="hover:border-b-4 hover:border-[#BA1319] pb-1 duration-200 text-white">Mint</Link>
                     <Link href = "https://x.com/UnleashedFNF" className='hover:border-b-4 hover:border-AkatsukiRed pb-1 duration-200'>Twitter</Link>
                     <Link href = "https://t.me/AkatsukiCalls_Sol" className='hover:border-b-4 hover:border-AkatsukiRed pb-1 duration-200'>Telegram</Link>
+                    <a href="/akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
+                     Whitepaper
+                    </a>
                 </div>
                 <div
                     onClick={() => setOpen(!isOpen)}
@@ -311,6 +314,9 @@ export default function Home() {
                         <Link href="/mint"className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Mint</Link>
                         <Link href="https://x.com/UnleashedFNF" className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Twitter</Link>
                         <Link href="https://t.me/AkatsukiCalls_Sol" className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Telegram</Link>
+                        <a href="/akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
+                         Whitepaper
+                        </a>
                     </div>
                 )}
             </div>
@@ -327,7 +333,7 @@ export default function Home() {
                     </div>
                 }
                 <div className = "relative">
-                  <img src = "/img/56.gif" alt="no image" className = "w-[550px] z-10" />
+                  <img src = "/img/LEGEND.png" alt="no image" className = "w-[550px] z-10" />
                   {soldOut == false && 
                     <div className='w-full absolute bottom-[-30px] flex items-center justify-center' onClick={() => onMint()}>
                       {mintState != "NOT_STARTED" && mintState != "ENDED" ? (
@@ -391,16 +397,8 @@ export default function Home() {
 
             </div>
             <img src='https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafybeigoql64dbyt2rfbnkewczgu7kl6zrljsvdns3r7rxyf3aswiskf7a' alt='no imgage' />
-            <img src='/img/Banner1.webp' alt='no imgage' className='mb-[20vw]' />
+            <img src='/img/Banner1.webp' alt='no imgage' className='mb-[20vw]' /> 
             <div className='flex w-full gap-8'>
-                <div className='flex flex-col w-1/2'>
-                    <img src='https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafkreidwfk2ilhydtf5h6dqiruuabj4vttdyuuy5z7fxws3htyh272wjb4' />
-                    <img src='https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafkreid3yyvmy2vqfmyzawdlaxdkyx6b6fgrqxk6xbxptilsab4axlyyku' />
-                </div>
-                <div className='flex flex-col w-1/2'>
-                    <img src='https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafybeidybwasvsnxsrwmiwidaiopa2m657limrt7weaoqgem3om3kbko2a' />
-                    <img src='https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafybeiguyluhznbqhx6gtpf45vvgazgtp7nuhh4ujuwqjpidsqr7mr5nzi' />
-                </div>
             </div>
         </div>
       {/* --------------------------------- Body End-------------------------------- */}   

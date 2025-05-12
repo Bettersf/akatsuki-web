@@ -49,6 +49,9 @@ export default function Home() {
             <Link href="https://casino.akatsuki-unleashed.fun/" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Casino</Link>
             <Link href="https://x.com/UnleashedFNF" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Twitter</Link>
             <Link href="https://t.me/AkatsukiCalls_Sol" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Telegram</Link>
+            <a href="/akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
+             Whitepaper
+            </a>
           </div>
           <div
             onClick={() => setOpen(!isOpen)}
@@ -62,6 +65,9 @@ export default function Home() {
               <Link href="https://casino.akatsuki-unleashed.fun/" className='text-center hover:bg-[#907848] duration-300'>Casino</Link>
               <Link href="https://x.com/UnleashedFNF" className='text-center hover:bg-[#907848] duration-300'>Twitter</Link>
               <Link href="https://t.me/AkatsukiCalls_Sol" className='text-center hover:bg-[#907848] duration-300'>Telegram</Link>
+              <a href="/akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
+                Whitepaper
+              </a>
             </div>
           )}
         </div>
@@ -89,7 +95,7 @@ export default function Home() {
         </p>
 
         {/* Info-boks */}
-        <div className='w-full max-w-3xl border border-akatsukiRed rounded-[10px] border-dotted p-[30px] text-white text-content bg-black bg-opacity-40 backdrop-blur'>
+        <div className='w-full max-w-3xl border-[6px] border-akatsukiRed rounded-[10px] p-[30px] text-white text-content bg-black bg-opacity-40 backdrop-blur'>
           <p className="mb-4 font-bold">Dear Trenchers</p>
           <p className="mb-4">The Akatsuki Unleashed NFT Collection grants exclusive access to the Private Akatsuki FNF Group, an elite "trench group" of crypto traders.</p>
           <p className="mb-4 font-bold">[Membership Nfts]</p>
@@ -153,6 +159,11 @@ export default function Home() {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Legg til bildet her */}
+        <div className="w-full flex justify-center my-8">
+          <img src='https://amaranth-reasonable-bison-352.mypinata.cloud/ipfs/bafybeigoql64dbyt2rfbnkewczgu7kl6zrljsvdns3r7rxyf3aswiskf7a' alt="Static banner" className="max-w-full rounded-lg shadow-lg" />
+        </div>
 
         <Team />
 
