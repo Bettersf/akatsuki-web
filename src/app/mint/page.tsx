@@ -296,7 +296,7 @@ export default function Home() {
                     <Link href="/mint" className="hover:border-b-4 hover:border-[#BA1319] pb-1 duration-200 text-white">Mint</Link>
                     <Link href = "https://x.com/UnleashedFNF" className='hover:border-b-4 hover:border-AkatsukiRed pb-1 duration-200'>Twitter</Link>
                     <Link href = "https://t.me/AkatsukiCalls_Sol" className='hover:border-b-4 hover:border-AkatsukiRed pb-1 duration-200'>Telegram</Link>
-                    <a href="/akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
+                    <a href="/Akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
                      Whitepaper
                     </a>
                 </div>
@@ -314,7 +314,7 @@ export default function Home() {
                         <Link href="/mint"className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Mint</Link>
                         <Link href="https://x.com/UnleashedFNF" className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Twitter</Link>
                         <Link href="https://t.me/AkatsukiCalls_Sol" className='w-full Kongz Dao text-center hover:bg-[#907848] duration-300'>Telegram</Link>
-                        <a href="/akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
+                        <a href="/Akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
                          Whitepaper
                         </a>
                     </div>

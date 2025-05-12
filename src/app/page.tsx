@@ -49,7 +49,7 @@ export default function Home() {
             <Link href="https://casino.akatsuki-unleashed.fun/" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Casino</Link>
             <Link href="https://x.com/UnleashedFNF" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Twitter</Link>
             <Link href="https://t.me/AkatsukiCalls_Sol" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Telegram</Link>
-            <a href="/akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
+            <a href="/Akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
              Whitepaper
             </a>
           </div>
@@ -65,7 +65,7 @@ export default function Home() {
               <Link href="https://casino.akatsuki-unleashed.fun/" className='text-center hover:bg-[#907848] duration-300'>Casino</Link>
               <Link href="https://x.com/UnleashedFNF" className='text-center hover:bg-[#907848] duration-300'>Twitter</Link>
               <Link href="https://t.me/AkatsukiCalls_Sol" className='text-center hover:bg-[#907848] duration-300'>Telegram</Link>
-              <a href="/akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
+              <a href="/Akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
                 Whitepaper
               </a>
             </div>
