@@ -23,5 +23,5 @@ export const MINT_STATES = {
 //  Public mint ends in:
 //  ENDED
 
-export const OG_TOKEN = new PublicKey("nft-addy");
-export const WL_TOKEN = new PublicKey("nft-addy");
+export const OG_TOKEN = new PublicKey("5CY4inXAWEKDENqJ5ZLNaTYX8gzjHZNXimuj7VmFmVi6");
+export const WL_TOKEN = new PublicKey("5CY4inXAWEKDENqJ5ZLNaTYX8gzjHZNXimuj7VmFmVi6");
