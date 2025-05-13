@@ -3,8 +3,8 @@ export const MINT_STATES = {
     "NOT_STARTED": {
         solPrice: 0
     },
-    "": {
-        solPrice: 0.5
+    "WL": {
+        solPrice: 1
     },
     "WL": {
         solPrice: 1
