@@ -143,7 +143,7 @@ export default function Home() {
       <div className="flex justify-center gap-4">
         <button
           onClick={() => setSelected("membership")}
-          className={`px-6 py-2 text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 ${
+          className={`px-6 py-2 text-sm sm:text-base font-bold rounded-lg transition-all duration-200 ${
             selected === "membership"
               ? "bg-white text-black shadow"
               : "border border-red-600 text-white hover:bg-red-900"
@@ -153,7 +153,7 @@ export default function Home() {
         </button>
         <button
           onClick={() => setSelected("1/1")}
-          className={`px-6 py-2 text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 ${
+          className={`px-6 py-2 text-sm sm:text-base font-bold rounded-lg transition-all duration-200 ${
             selected === "1/1"
               ? "bg-white text-black shadow"
               : "border border-red-600 text-white hover:bg-red-900"
