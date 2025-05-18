@@ -36,8 +36,8 @@ export default function Home() {
     content: "text-small px-2",
   };
 
-  return (
-    <div className="w-full min-h-screen font-ShPinscher bg-transparent relative">
+   return (
+     <div className="w-full min-h-screen font-ShPinscher bg-transparent relative"></div>
       <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
       <h1 className="akatsuki-title relative z-10 animate-fade-in">AKATSUKI UNLEASHED</h1>
 
