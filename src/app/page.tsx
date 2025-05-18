@@ -314,7 +314,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="fixed bottom-4 right-4 z-50">
+      <div className='fixed bottom-4 right-4 z-50'>
         <iframe
          src="https://open.spotify.com/embed/track/1Ju2lYlvXnvXe3r3QC9sJH"
          width="300"
