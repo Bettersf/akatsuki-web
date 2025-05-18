@@ -163,7 +163,7 @@ export default function Home() {
             className="w-[550px] rounded-md shadow-lg border-4 border-red-900"
            />
           </div>
-          {/* Wide Mint Button Right Under Image */}
+          {{/* Wide Mint Button Right Under Image */}
           <a
             href={
               selected === "membership"
@@ -175,10 +175,9 @@ export default function Home() {
             className="w-full max-w-[550px]"
           >
             <button className="w-full py-4 mt-4 bg-red-700 hover:bg-red-900 text-white text-lg font-bold rounded-xl shadow-lg">
-              Mint Now
+              {selected === "membership" ? "Mint Akatsuki Unleashed" : "Mint 1/1 Legendary"}
             </button>
           </a>
-
           {/* Mint Status */}
           <span className="animate-pulse text-lg sm:text-xl font-bold text-white">
             Mint is Live
@@ -192,7 +191,7 @@ export default function Home() {
       </div>
        {/* Legg til bildet her */}
         <div className="w-full flex justify-center my-8">
-          <img src='/img/unleashed.gif' alt="Static banner" className="max-w-full rounded-lg shadow-lg" />
+          <img src='/img/unleasheds.gif' alt="Static banner" className="max-w-full rounded-lg shadow-lg" />
         </div>
         {/* Rarity */}
         <div className='w-full max-w-4xl border-[4px] border-akatsukiRed rounded-[10px] p-6 flex flex-col items-center gap-6 text-white bg-black bg-opacity-40 backdrop-blur'>
