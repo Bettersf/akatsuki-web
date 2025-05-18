@@ -36,7 +36,7 @@ export default function Home() {
     content: "text-small px-2",
   };
 
-return (
+   return (
   <div className="w-full min-h-screen font-ShPinscher bg-transparent relative">
     {/* Background overlay */}
     <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
@@ -91,7 +91,6 @@ return (
           )}
         </div>
       </div>
-);
       {/* Logo */}
       <div className='pt-[100px] w-full flex justify-center items-center relative z-10 animate-fade-in'>
         <div className='w-full md:w-4/5 flex justify-center'>
