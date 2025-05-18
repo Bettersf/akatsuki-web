@@ -190,6 +190,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+       {/* Legg til bildet her */}
+        <div className="w-full flex justify-center my-8">
+          <img src='/img/unleashed.gif' alt="Static banner" className="max-w-full rounded-lg shadow-lg" />
+        </div>
         {/* Rarity */}
         <div className='w-full max-w-4xl border-[4px] border-akatsukiRed rounded-[10px] p-6 flex flex-col items-center gap-6 text-white bg-black bg-opacity-40 backdrop-blur'>
           <h2 className='text-[38px] text_shadow'>RARITY</h2>
