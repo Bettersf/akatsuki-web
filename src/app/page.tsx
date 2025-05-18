@@ -129,9 +129,9 @@ export default function Home() {
  {/* Mint Section Styled Like Provided Image */}
       <div id="mint" className="w-full flex justify-center px-4 mt-10">
         <div className="w-full max-w-3xl bg-black bg-opacity-40 border-[6px] border-akatsukiRed rounded-[10px] p-6 text-white backdrop-blur-lg flex flex-col items-center gap-6">
-          <h3 className="text-3xl sm:text-4xl font-bold text-center">Explore Akatsuki NFTs</h3>
+          <h3 className="text-3xl sm:text-4xl font-bold text-center">Mint Akatsuki Unoeashed NFTs</h3>
           {/* Small helper text under the buttons */}
-          <p className="text-sm text-white opacity-70 mt-1">Select your NFT collection</p>
+          <p className="text-sm text-white opacity-70 mt-1">Select collection</p>
           {/* Buttons Styled Like Image */}
           <div className="flex justify-center gap-4">
             <button
