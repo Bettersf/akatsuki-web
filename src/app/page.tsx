@@ -109,16 +109,16 @@ export default function Home() {
           Akatsuki Unleashed is an exclusive collection of 10,000 unique NFTs. Owning one of these NFTs grants you access to the private Akatsuki FNF group—an elite "trench group" of seasoned crypto traders. This community offers insights, strategies, and networking opportunities for those looking to elevate their crypto trading to the next level.
         </p>
         <p className='text-border-akatsukiRed text-title text-center max-w-xl'>
-          CHECK OUT <a href="#mint" className='text-white underline'>Mint</a> TO MINT YOUR AKATSUKI UNLEASHED NFT!
+         Mint your Akatsuki Unleashed Nft <a href="#mint" className='text-white underline'>Here</a>
         </p>
 
         {/* Info-boks */}
         <div className='w-full max-w-3xl border-[4px] border-akatsukiRed rounded-[10px] p-[30px] text-white text-content bg-black bg-opacity-40 backdrop-blur'>
           <p className="mb-4 font-bold">Dear Trenchers</p>
           <p className="mb-4">The Akatsuki Unleashed NFT Collection grants exclusive access to the Private Akatsuki FNF Group, an elite "trench group" of crypto traders.</p>
-          <p className="mb-4 font-bold">[Membership Nfts]</p>
+          <p className="mb-4 font-bold">Membership Nfts</p>
           <p className="mb-4">These NFTs unlock membership to a high-caliber, members-only community where top traders share exclusive insights, strategies, and market analysis.</p>
-          <p className="mb-4 font-bold">[New Art]</p>
+          <p className="mb-4 font-bold">New Art</p>
           <p className="mb-4">Inspired by the iconic Akatsuki, this group offers unparalleled networking and trading opportunities for serious investors.</p>
           <p>Secure your NFT pack to join the trenches and elevate your crypto game!</p>
         </div>
@@ -127,11 +127,11 @@ export default function Home() {
 </div>
 
  <div id="mint" className="w-full flex justify-center px-4 mt-10">
-  <div className="relative w-full max-w-3xl border-[6px] border-akatsukiRed rounded-[10px] overflow-hidden">
+  <div className="relative w-full max-w-3xl border-[4px] border-akatsukiRed rounded-[10px] overflow-hidden">
     {/* Background Image */}
     <div className="absolute inset-0 bg-[url('/img/12.png')] bg-cover bg-center z-0"></div>
     {/* Overlay */}
-    <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+    <div className="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
 
     {/* Content */}
     <div className="relative z-20 p-6 text-white backdrop-blur-lg flex flex-col items-center gap-6">
@@ -213,8 +213,8 @@ export default function Home() {
               <p className='text-title mb-2'>Type</p>
               <table className='w-full'>
                 <tbody>
-                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>10,000</td><td>Total Akatsuki Unleashed</td></tr>
-                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>10</td><td>1/1 Legendary Akatsukis</td></tr>
+                  <tr className="odd:bg-red-900"><td className='p-1'>10,000</td><td>Total Akatsuki Unleashed</td></tr>
+                  <tr className="odd:bg-red-900"><td className='p-1'>10</td><td>1/1 Legendary Akatsukis</td></tr>
                 </tbody>
               </table>
             </div>
@@ -222,10 +222,10 @@ export default function Home() {
               <p className='text-title mb-2'>Variation</p>
               <table className='w-full'>
                 <tbody>
-                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>Bodies</td><td>Clothing</td></tr>
-                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>Eyes</td><td>Hats</td></tr>
-                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>Hair</td><td>Mouth</td></tr>
-                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>Hair Back Layers</td><td>Background</td></tr>
+                  <tr className="odd:bg-red-900"><td className='p-1'>Bodies</td><td>Clothing</td></tr>
+                  <tr className="odd:bg-red-900"><td className='p-1'>Eyes</td><td>Hats</td></tr>
+                  <tr className="odd:bg-red-900"><td className='p-1'>Hair</td><td>Mouth</td></tr>
+                  <tr className="odd:bg-red-900"><td className='p-1'>Hair Back Layers</td><td>Background</td></tr>
                 </tbody>
               </table>
             </div>
@@ -247,9 +247,9 @@ export default function Home() {
           {assets.map((val, index) => (
             <SwiperSlide key={val.url}>
               <div className='img_wraper relative'>
-                <img src={val.url} alt={val.title} className='rounded-[15px] border-8 border-akatsukiRed pink_shadow' />
+                <img src={val.url} alt={val.title} className='rounded-[15px] border-6 border-akatsukiRed pink_shadow' />
                 <div className='absolute w-full flex justify-center items-center bottom-[-25px]'>
-                  <button className='pink_shadow text-white rounded-[10px] border-[6px] border-akatsukiRed px-4 bg-bgColor text-[18px] sm:text-[38px]'>
+                  <button className='pink_shadow text-white rounded-[10px] border-[4px] border-akatsukiRed px-4 bg-bgColor text-[18px] sm:text-[38px]'>
                     {val.title}
                   </button>
                 </div>
