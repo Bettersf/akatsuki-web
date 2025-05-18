@@ -18,7 +18,33 @@ import { Pagination, Keyboard, Navigation } from 'swiper/modules'
 export default function Home() {
   const [isOpen, setOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
-  const [selected, setSelected] = useState("membership");
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Main Collection
+      window.ownerId = "7DZRJgvt16kAwfKTVwMAkbaV9CZouBvxyANrRUMehDKi";
+      window.collectionId = "J99CizsQopb9oDKEku58WNv1XomjD1PLSGbr6hrze4nN";
+
+      const scriptMain = document.createElement("script");
+      scriptMain.type = "module";
+      scriptMain.src = "https://storage.googleapis.com/scriptslmt/0.1.3/solana.js";
+      document.body.appendChild(scriptMain);
+
+      // 1/1 Collection
+      setTimeout(() => {
+        const legendaryContainer = document.getElementById("mint-button-container-legendary");
+        if (legendaryContainer) legendaryContainer.innerHTML = "";
+
+        window.ownerId = "9obXs68qmF4i6YvXsGDvY7dZM2ZWCjzy2eLVDqUbkYin";
+        window.collectionId = "J99CizsQopb9oDKEku58WNv1XomjD1PLSGbr6hrze4nN";
+
+        const scriptLegendary = document.createElement("script");
+        scriptLegendary.type = "module";
+        scriptLegendary.src = "https://storage.googleapis.com/scriptslmt/0.1.3/solana.js";
+        document.body.appendChild(scriptLegendary);
+      }, 3000);
+    }
+  }, []);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,24 +70,15 @@ export default function Home() {
       {/* Header */}
       <div className={`w-full flex flex-col justify-center items-center fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isSticky ? 'bg-black bg-opacity-80 shadow-lg' : 'bg-transparent'}`}>
         <div className='w-5/6 md:w-2/3 flex justify-between mt-4 h-[40px]'>
-          <ScholashipBtn content="Send a Message" url="/contact" />
+          <ScholashipBtn content="APPLY FOR Membership" url="/contact" />
           <div className='hidden md:flex justify-between gap-6 text-white text-content'>
-            <a href="#mint" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
-             Mint
-             </a>
-            <span className="hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200 opacity-50 cursor-not-allowed">
-            Casino (TBA)
-            </span>
+            <Link href="/mint" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Mint</Link>
+            <Link href="https://casino.akatsuki-unleashed.fun/" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Casino</Link>
             <Link href="https://x.com/UnleashedFNF" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Twitter</Link>
             <Link href="https://t.me/AkatsukiCalls_Sol" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>Telegram</Link>
-            <a
-            href="/img/Akatsuki-wp.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200"
-           >
-           Whitepaper
-          </a>
+            <a href="/img/Akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
+             Whitepaper
+            </a>
           </div>
           <div
             onClick={() => setOpen(!isOpen)}
@@ -71,22 +88,13 @@ export default function Home() {
           </div>
           {isOpen && (
             <div className='absolute w-full bg-black bg-opacity-90 top-[4.6rem] left-0 p-4 text-white flex md:hidden flex-col gap-4 z-20'>
-              <a href="#mint" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
-             Mint
-             </a>
-              <span className="hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200 opacity-50 cursor-not-allowed">
-            Casino (TBA)
-            </span>
+              <Link href="/mint" className='text-center hover:bg-[#907848] duration-300'>Mint</Link>
+              <Link href="https://casino.akatsuki-unleashed.fun/" className='text-center hover:bg-[#907848] duration-300'>Casino</Link>
               <Link href="https://x.com/UnleashedFNF" className='text-center hover:bg-[#907848] duration-300'>Twitter</Link>
               <Link href="https://t.me/AkatsukiCalls_Sol" className='text-center hover:bg-[#907848] duration-300'>Telegram</Link>
-              <a
-            href="/img/Akatsuki-wp.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200"
-           >
-           Whitepaper
-          </a>
+              <a href="/img/Akatsuki-wp.pdf" target="_blank" rel="noopener noreferrer" className='hover:border-b-4 hover:border-[#FF0000] pb-1 duration-200'>
+                Whitepaper
+              </a>
             </div>
           )}
         </div>
@@ -95,21 +103,22 @@ export default function Home() {
       {/* Logo */}
       <div className='pt-[100px] w-full flex justify-center items-center relative z-10 animate-fade-in'>
         <div className='w-full md:w-4/5 flex justify-center'>
-          <img
-            src='/img/KongzDAObySolKongzV2-noBG.png'
-            alt='Akatsuki Logo'
-            className='drop-shadow-[0_0_12px_white] glitch-logo'
-          />
+        <img
+        src='/img/KongzDAObySolKongzV2-noBG.png'
+        alt='Akatsuki Logo'
+        className='drop-shadow-[0_0_12px_white] glitch-logo'
+        />
+
         </div>
       </div>
 
       {/* NFT Introduksjon */}
       <div className='w-full flex flex-col justify-between items-center gap-20 relative z-10 mt-12 px-4'>
         <p className='text-white text-content text-center max-w-3xl'>
-          Akatsuki Unleashed is an exclusive collection of 10,000 unique NFTs. Owning one of these NFTs grants you access to the private Akatsuki FNF group—an elite "trench group" of seasoned crypto traders. This community offers insights, strategies, and networking opportunities for those looking to elevate their crypto trading to the next level.
+        Akatsuki Unleashed is an exclusive collection of 10,000 unique NFTs. Owning one of these NFTs grants you access to the private Akatsuki FNF group—an elite "trench group" of seasoned crypto traders. This community offers insights, strategies, and networking opportunities for those looking to elevate their crypto trading to the next level. 
         </p>
         <p className='text-border-akatsukiRed text-title text-center max-w-xl'>
-          CHECK OUT <a href="#mint" className='text-white underline'>Mint</a> TO MINT YOUR AKATSUKI UNLEASHED NFT!
+          CHECK OUT THE <Link href='/mint' className='text-white underline'>Mint</Link> TO MINT YOUR AKATSUKI UNLEASHED NFT!
         </p>
 
         {/* Info-boks */}
@@ -117,83 +126,48 @@ export default function Home() {
           <p className="mb-4 font-bold">Dear Trenchers</p>
           <p className="mb-4">The Akatsuki Unleashed NFT Collection grants exclusive access to the Private Akatsuki FNF Group, an elite "trench group" of crypto traders.</p>
           <p className="mb-4 font-bold">[Membership Nfts]</p>
-          <p className="mb-4">These NFTs unlock membership to a high-caliber, members-only community where top traders share exclusive insights, strategies, and market analysis.</p>
+          <p className="mb-4">these NFTs unlock membership to a high-caliber, members-only community where top traders share exclusive insights, strategies, and market analysis.</p>
           <p className="mb-4 font-bold">[New Art]</p>
           <p className="mb-4">Inspired by the iconic Akatsuki, this group offers unparalleled networking and trading opportunities for serious investors.</p>
           <p>Secure your NFT pack to join the trenches and elevate your crypto game!</p>
         </div>
-        <div id="mint" className="w-full max-w-3xl border-[6px] border-akatsukiRed ...">
-  {/* your mint content */}
+         {/* Mint Zone */}
+        <div className="w-full max-w-3xl border-[6px] border-akatsukiRed rounded-[10px] p-6 mt-10 text-white bg-black bg-opacity-40 backdrop-blur flex flex-col gap-10">
+
+        {/* Main Collection Mint */}
+       <div className="w-full">
+  <h3 className="text-title mb-4 text-center">Mint Your Akatsuki NFT</h3>
+  <div id="mint-button-container-main" className="mb-2" />
+  <div id="mint-counter-main" className="text-center text-sm opacity-70" />
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.ownerId = "YOUR_MAIN_OWNER_ID";
+        window.collectionId = "YOUR_MAIN_COLLECTION_ID";
+      `
+    }}
+  />
+  <script type="module" src="https://storage.googleapis.com/scriptslmt/0.1.3/solana.js" />
+  <link rel="stylesheet" href="https://storage.googleapis.com/scriptslmt/0.1.3/solana.css" />
 </div>
-<div className="w-full max-w-3xl border-[6px] border-akatsukiRed rounded-[10px] p-6 mt-10 text-white bg-black bg-opacity-40 backdrop-blur flex flex-col gap-10">
-  <h3 className="text-title mb-4 text-center">Mint your Akatsuki NFT</h3>
 
-  {/* Bilde med Mint-knapp */}
-  <div className="w-full flex justify-center relative">
-    <img
-      src={
-        selected === "membership"
-          ? "/img/og.png"
-          : "/img/legendary.png"
-      }
-      alt={selected === "membership" ? "Akatsuki NFT" : "Legendary NFT"}
-      className="w-[550px] rounded-lg shadow-lg"
-    />
+{/* 1/1 Legendary Mint */}
+<div className="w-full">
+  <h3 className="text-title mb-4 text-center">Mint a 1/1 Legendary</h3>
+  <div id="mint-button-container-legendary" className="mb-2" />
+  <div id="mint-counter-legendary" className="text-center text-sm opacity-70" />
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        window.ownerId = "YOUR_1OF1_OWNER_ID";
+        window.collectionId = "YOUR_1OF1_COLLECTION_ID";
+      `
+    }}
+  />
+  <script type="module" src="https://storage.googleapis.com/scriptslmt/0.1.3/solana.js" />
+  <link rel="stylesheet" href="https://storage.googleapis.com/scriptslmt/0.1.3/solana.css" />
+</div>
 
-    <a
-      href={
-        selected === "membership"
-          ? "https://launchmynft.io/sol/16225"
-          : "https://launchmynft.io/sol/16223"
-      }
-      target="_blank"
-      rel="noopener noreferrer"
-      className="absolute bottom-4 left-1/2 transform -translate-x-1/2"
-    >
-      <button className="w-20 h-20 bg-blue-800 hover:bg-blue-600 text-white text-base font-bold rounded-full shadow-lg">
-        Mint
-      </button>
-    </a>
-  </div>
-
-  {/* Ny tekst: Select your collection */}
-  <p className="mt-6 text-center text-sm sm:text-base mt-4 text-white font-medium">
-    Select your collection
-  </p>
-
-  {/* Valgknapper + "Mint is Live" */}
-  <div className="w-[550px] mx-auto mt-2 flex items-center justify-between">
-    <button
-      className={`w-20 h-20 rounded-full text-base font-bold border-2 transition duration-200 ${
-        selected === "membership"
-          ? "bg-red-800 hover:bg-red-900 text-white border-white"
-          : "bg-akatsukiRed hover:bg-red-800 text-white border-transparent"
-      }`}
-      onClick={() => setSelected("membership")}
-    >
-      Akatsuki
-    </button>
-
-    <span className="animate-pulse text-lg sm:text-xl font-bold text-white">
-      Mint is Live
-    </span>
-
-    <button
-      className={`w-20 h-20 rounded-full text-base font-bold border-2 transition duration-200 ${
-        selected === "1/1"
-          ? "bg-red-800 hover:bg-red-900 text-white border-white"
-          : "bg-akatsukiRed hover:bg-red-800 text-white border-transparent"
-      }`}
-      onClick={() => setSelected("1/1")}
-    >
-      1/1
-    </button>
-  </div>
-
-  {/* Prisvisning */}
-  <div className="text-center text-sm mt-2 text-red opacity-80">
-    Requirement: {selected === "membership" ? "0.3 SOL" : "1 SOL"}
-  </div>
 </div>
 
         {/* Rarity */}

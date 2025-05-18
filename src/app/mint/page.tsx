@@ -113,46 +113,42 @@ export default function Home() {
     }
 
     const now = Date.now() / 1000;
-
-  if (
-    cndy?.candyGuard?.groups?.[0]?.guards?.startDate?.date &&
-    now < cndy.candyGuard.groups[0].guards.startDate.date.toNumber()
-  ) {
-    console.log("mint not started");
-    setMintState("NOT_STARTED");
-    setNextTime(
-    new Date(cndy.candyGuard.groups[0].guards.startDate.date.toNumber() * 1000)
-    );
-  } else if (
-    cndy?.candyGuard?.groups?.[1]?.guards?.startDate?.date &&
-    now < cndy.candyGuard.groups[1].guards.startDate.date.toNumber()
-  ) {
-    console.log("og mint");
-    setMintState("OG");
-    setNextTime(
-    new Date(cndy.candyGuard.groups[1].guards.startDate.date.toNumber() * 1000)
-    );
-  } else if (
-    cndy?.candyGuard?.groups?.[2]?.guards?.startDate?.date &&
-    now < cndy.candyGuard.groups[2].guards.startDate.date.toNumber()
-  ) {
-    console.log("wl mint");
-    setMintState("WL");
-    setNextTime(
-      new Date(cndy.candyGuard.groups[2].guards.startDate.date.toNumber() * 1000)
-    );
-  } else if (
-    cndy?.candyGuard?.groups?.[2]?.guards?.startDate?.date &&
-    now > cndy.candyGuard.groups[2].guards.startDate.date.toNumber()
-  ) {
-    setMintState("PUBLIC");
-    setNextTime(
-    new Date(cndy.candyGuard.groups[2].guards.startDate.date.toNumber() * 1000)
-   );
-   } else {
-    setMintState("ENDED");
-    setNextTime(new Date());
-   }
+    // console.log("wallet: ", wallet?.publicKey.toBase58());
+    if (now < cndy?.candyGuard?.groups[0].guards.startDate?.date.toNumber()) {
+      console.log("mint not started");
+      setMintState("NOT_STARTED");
+      setNextTime(
+        new Date(
+          cndy?.candyGuard?.groups[0].guards.startDate?.date.toNumber() * 1000
+        )
+      );
+    } else if (now < cndy?.candyGuard?.groups[1].guards.startDate?.date.toNumber()) {
+      console.log("og mint");
+      setMintState("OG");
+      setNextTime(
+        new Date(
+          cndy?.candyGuard?.groups[1].guards.startDate?.date.toNumber() * 1000
+        )
+      );
+    } else if (now < cndy?.candyGuard?.groups[2].guards.startDate?.date.toNumber()) {
+      console.log("wl mint");
+      setMintState("WL");
+      setNextTime(
+        new Date( 
+          cndy?.candyGuard?.groups[2].guards.startDate?.date.toNumber() * 1000
+        )
+      );
+    } else if (now > cndy?.candyGuard?.groups[2].guards.startDate?.date.toNumber()) {
+      setMintState("PUBLIC");
+      setNextTime(
+        new Date(
+          cndy?.candyGuard?.groups[2].guards.startDate?.date.toNumber() * 1000
+        )
+      );
+    } else {
+      setMintState("ENDED");
+      setNextTime(new Date());
+    }
 
     setItemsAvailable(cndy.itemsLoaded);
     setItemsMinted(cndy.itemsMinted.toNumber());

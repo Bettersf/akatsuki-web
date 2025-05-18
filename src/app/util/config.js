@@ -3,25 +3,25 @@ export const MINT_STATES = {
     "NOT_STARTED": {
         solPrice: 0
     },
-    "": {
-        solPrice: 0.5
+    "OG": {
+        solPrice: 0
     },
     "WL": {
-        solPrice: 1
+        solPrice: 0.25
     },
     "PUBLIC": {
-        solPrice: 0.3
+        solPrice: 0.5
     },
     "ENDED": {
         solPrice: 0
     },
 };
 
-//  OG mint starts in: + 24 * 60 * 60 * 1000
+//  OG mint starts in :
 //  OG mint ends in:
 //  WL mint ends in:
 //  Public mint ends in:
 //  ENDED
 
-export const OG_TOKEN = new PublicKey("J99CizsQopb9oDKEku58WNv1XomjD1PLSGbr6hrze4nN");
-export const WL_TOKEN = new PublicKey("9obXs68qmF4i6YvXsGDvY7dZM2ZWCjzy2eLVDqUbkYin");
+export const OG_TOKEN = new PublicKey("5CY4inXAWEKDENqJ5ZLNaTYX8gzjHZNXimuj7VmFmVi6");
+export const WL_TOKEN = new PublicKey("5CY4inXAWEKDENqJ5ZLNaTYX8gzjHZNXimuj7VmFmVi6");
