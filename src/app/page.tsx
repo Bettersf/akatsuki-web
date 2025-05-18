@@ -91,6 +91,7 @@ export default function Home() {
           )}
         </div>
       </div>
+
       {/* Logo */}
       <div className='pt-[100px] w-full flex justify-center items-center relative z-10 animate-fade-in'>
         <div className='w-full md:w-4/5 flex justify-center'>
@@ -162,7 +163,7 @@ export default function Home() {
             className="w-[550px] rounded-md shadow-lg border-4 border-red-900"
            />
           </div>
-          {{/* Wide Mint Button Right Under Image */}
+          {/* Wide Mint Button Right Under Image */}
           <a
             href={
               selected === "membership"
