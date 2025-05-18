@@ -207,7 +207,7 @@ export default function Home() {
               <table className='w-full'>
                 <tbody>
                   <tr className="odd:bg-akatsukiRed"><td className='p-1'>10,000</td><td>Total Akatsuki Unleashed</td></tr>
-                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>10</td><td>1/1 Legendary Akatsukis</td></tr>
+                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>25</td><td>1/1 Legendary Akatsukis</td></tr>
                 </tbody>
               </table>
             </div>
