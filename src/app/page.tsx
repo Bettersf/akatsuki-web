@@ -316,13 +316,13 @@ export default function Home() {
       </div>
       <div className="fixed bottom-4 right-4 z-50">
         <iframe
-          src="https://open.spotify.com/embed/track/1Ju2lYlvXnvXe3r3QC9sJH"
-          width="300"
-          height="80"
-          frameBorder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        />
+         src="https://open.spotify.com/embed/track/1Ju2lYlvXnvXe3r3QC9sJH"
+         width="300"
+         height="80"
+         frameBorder="0"
+         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+         loading="lazy"
+        ></iframe>
       </div>
     </div>
   )
