@@ -125,77 +125,71 @@ export default function Home() {
         <div id="mint" className="w-full max-w-3xl border-[6px] border-akatsukiRed ...">
   {/* your mint content */}
 </div>
-<div className="w-full max-w-3xl border-[6px] border-akatsukiRed rounded-[10px] p-6 mt-10 text-white bg-black bg-opacity-40 backdrop-blur flex flex-col gap-10">
-  <h3 className="text-title mb-4 text-center">Mint your Akatsuki NFT</h3>
 
-  {/* Bilde med Mint-knapp */}
-  <div className="w-full flex justify-center relative">
-    <img
-      src={
-        selected === "membership"
-          ? "/img/og.png"
-          : "/img/legendary.png"
-      }
-      alt={selected === "membership" ? "Akatsuki NFT" : "Legendary NFT"}
-      className="w-[550px] rounded-lg shadow-lg"
-    />
+ {/* Mint Section Styled Like Provided Image */}
+      <div id="mint" className="w-full flex justify-center px-4 mt-10">
+        <div className="w-full max-w-3xl bg-black bg-opacity-40 border-[6px] border-akatsukiRed rounded-[10px] p-6 text-white backdrop-blur-lg flex flex-col items-center gap-6">
+          <h3 className="text-3xl sm:text-4xl font-bold text-center">Explore Akatsuki NFTs</h3>
+          {/* Small helper text under the buttons */}
+          <p className="text-sm text-white opacity-70 mt-1">Select your NFT collection</p>
+          {/* Buttons Styled Like Image */}
+          <div className="flex justify-center gap-4">
+            <button
+              onClick={() => setSelected("membership")}
+              className={`px-6 py-2 text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 ${
+                selected === "membership"
+                  ? "bg-white text-black shadow"
+                  : "border border-red-600 text-white hover:bg-red-900"
+              }`}
+            >
+              Akatsuki NFT
+            </button>
+            <button
+              onClick={() => setSelected("1/1")}
+              className={`px-6 py-2 text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 ${
+                selected === "1/1"
+                  ? "bg-white text-black shadow"
+                  : "border border-red-600 text-white hover:bg-red-900"
+              }`}
+            >
+              1/1 Legendary
+            </button>
+          </div>
+          {/* NFT Image with Border */}
+          <div className="rounded-lg p-1">
+           <img
+            src={selected === "membership" ? "/img/og.png" : "/img/legendary.png"}
+            alt={selected === "membership" ? "Akatsuki NFT" : "Legendary NFT"}
+            className="w-[550px] rounded-md shadow-lg border-4 border-red-900"
+           />
+          </div>
+          {/* Wide Mint Button Right Under Image */}
+          <a
+            href={
+              selected === "membership"
+                ? "https://launchmynft.io/sol/16225"
+                : "https://launchmynft.io/sol/16223"
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full max-w-[550px]"
+          >
+            <button className="w-full py-4 mt-4 bg-red-700 hover:bg-red-900 text-white text-lg font-bold rounded-xl shadow-lg">
+              Mint Now
+            </button>
+          </a>
 
-    <a
-      href={
-        selected === "membership"
-          ? "https://launchmynft.io/sol/16225"
-          : "https://launchmynft.io/sol/16223"
-      }
-      target="_blank"
-      rel="noopener noreferrer"
-      className="absolute bottom-4 left-1/2 transform -translate-x-1/2"
-    >
-      <button className="w-20 h-20 bg-blue-800 hover:bg-blue-600 text-white text-base font-bold rounded-full shadow-lg">
-        Mint
-      </button>
-    </a>
-  </div>
+          {/* Mint Status */}
+          <span className="animate-pulse text-lg sm:text-xl font-bold text-white">
+            Mint is Live
+          </span>
 
-  {/* Ny tekst: Select your collection */}
-  <p className="mt-6 text-center text-sm sm:text-base mt-4 text-white font-medium">
-    Select your collection
-  </p>
-
-  {/* Valgknapper + "Mint is Live" */}
-  <div className="w-[550px] mx-auto mt-2 flex items-center justify-between">
-    <button
-      className={`w-20 h-20 rounded-full text-base font-bold border-2 transition duration-200 ${
-        selected === "membership"
-          ? "bg-red-800 hover:bg-red-900 text-white border-white"
-          : "bg-akatsukiRed hover:bg-red-800 text-white border-transparent"
-      }`}
-      onClick={() => setSelected("membership")}
-    >
-      Akatsuki
-    </button>
-
-    <span className="animate-pulse text-lg sm:text-xl font-bold text-white">
-      Mint is Live
-    </span>
-
-    <button
-      className={`w-20 h-20 rounded-full text-base font-bold border-2 transition duration-200 ${
-        selected === "1/1"
-          ? "bg-red-800 hover:bg-red-900 text-white border-white"
-          : "bg-akatsukiRed hover:bg-red-800 text-white border-transparent"
-      }`}
-      onClick={() => setSelected("1/1")}
-    >
-      1/1
-    </button>
-  </div>
-
-  {/* Prisvisning */}
-  <div className="text-center text-sm mt-2 text-red opacity-80">
-    Requirement: {selected === "membership" ? "0.3 SOL" : "1 SOL"}
-  </div>
-</div>
-
+          {/* Price Display */}
+          <div className="text-center text-sm text-white opacity-80">
+            Requirement: {selected === "membership" ? "0.3 SOL" : "1 SOL"}
+          </div>
+        </div>
+      </div>
         {/* Rarity */}
         <div className='w-full max-w-4xl border-[6px] border-akatsukiRed rounded-[10px] p-6 flex flex-col items-center gap-6 text-white bg-black bg-opacity-40 backdrop-blur'>
           <h2 className='text-[38px] text_shadow'>RARITY</h2>
@@ -207,7 +201,7 @@ export default function Home() {
               <table className='w-full'>
                 <tbody>
                   <tr className="odd:bg-akatsukiRed"><td className='p-1'>10,000</td><td>Total Akatsuki Unleashed</td></tr>
-                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>25</td><td>1/1 Legendary Akatsukis</td></tr>
+                  <tr className="odd:bg-akatsukiRed"><td className='p-1'>10</td><td>1/1 Legendary Akatsukis</td></tr>
                 </tbody>
               </table>
             </div>
