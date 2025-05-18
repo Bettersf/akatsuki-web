@@ -128,7 +128,11 @@ export default function Home() {
 
  {/* Mint Section Styled Like Provided Image */}
       <div id="mint" className="w-full flex justify-center px-4 mt-10">
-        <div className="w-full max-w-3xl bg-[url('/img/12.png')] bg-cover bg-center border-[6px] border-akatsukiRed rounded-[10px] p-6 text-white backdrop-blur-lg flex flex-col items-center gap-6">
+       <div className="relative w-full max-w-3xl border-[6px] border-akatsukiRed rounded-[10px] overflow-hidden">
+    {/* Background Image */}
+        <div className="absolute inset-0 bg-[url('/img/12.png')] bg-cover bg-center z-0"></div>
+    {/* Overlay */}
+         <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
           <h3 className="text-3xl sm:text-4xl font-bold text-center">Mint Akatsuki Unoeashed NFTs</h3>
           {/* Small helper text under the buttons */}
           <p className="text-sm text-white opacity-70 mt-1">Select collection</p>
