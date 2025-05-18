@@ -126,73 +126,79 @@ export default function Home() {
   {/* your mint content */}
 </div>
 
- {/* Mint Section Styled Like Provided Image */}
-      <div id="mint" className="w-full flex justify-center px-4 mt-10">
-       <div className="relative w-full max-w-3xl border-[6px] border-akatsukiRed rounded-[10px] overflow-hidden">
+ <div id="mint" className="w-full flex justify-center px-4 mt-10">
+  <div className="relative w-full max-w-3xl border-[6px] border-akatsukiRed rounded-[10px] overflow-hidden">
     {/* Background Image */}
-        <div className="absolute inset-0 bg-[url('/img/12.png')] bg-cover bg-center z-0"></div>
+    <div className="absolute inset-0 bg-[url('/img/12.png')] bg-cover bg-center z-0"></div>
     {/* Overlay */}
-         <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
-          <h3 className="text-3xl sm:text-4xl font-bold text-center">Mint Akatsuki Unoeashed NFTs</h3>
-          {/* Small helper text under the buttons */}
-          <p className="text-sm text-white opacity-70 mt-1">Select collection</p>
-          {/* Buttons Styled Like Image */}
-          <div className="flex justify-center gap-4">
-            <button
-              onClick={() => setSelected("membership")}
-              className={`px-6 py-2 text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 ${
-                selected === "membership"
-                  ? "bg-white text-black shadow"
-                  : "border border-red-600 text-white hover:bg-red-900"
-              }`}
-            >
-              Akatsuki NFT
-            </button>
-            <button
-              onClick={() => setSelected("1/1")}
-              className={`px-6 py-2 text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 ${
-                selected === "1/1"
-                  ? "bg-white text-black shadow"
-                  : "border border-red-600 text-white hover:bg-red-900"
-              }`}
-            >
-              1/1 Legendary
-            </button>
-          </div>
-          {/* NFT Image with Border */}
-          <div className="rounded-lg p-1">
-           <img
-            src={selected === "membership" ? "/img/og.png" : "/img/legendary.png"}
-            alt={selected === "membership" ? "Akatsuki NFT" : "Legendary NFT"}
-            className="w-[550px] rounded-md shadow-lg border-4 border-red-900"
-           />
-          </div>
-          {/* Wide Mint Button Right Under Image */}
-          <a
-            href={
-              selected === "membership"
-                ? "https://launchmynft.io/sol/16225"
-                : "https://launchmynft.io/sol/16223"
-            }
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full max-w-[550px]"
-          >
-            <button className="w-full py-4 mt-4 bg-red-700 hover:bg-red-900 text-white text-lg font-bold rounded-xl shadow-lg">
-              {selected === "membership" ? "Mint Akatsuki Unleashed" : "Mint 1/1 Legendary"}
-            </button>
-          </a>
-          {/* Mint Status */}
-          <span className="animate-pulse text-lg sm:text-xl font-bold text-white">
-            Mint is Live
-          </span>
+    <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
 
-          {/* Price Display */}
-          <div className="text-center text-sm text-white opacity-80">
-            Requirement: {selected === "membership" ? "0.3 SOL" : "1 SOL"}
-          </div>
-        </div>
+    {/* Content */}
+    <div className="relative z-20 p-6 text-white backdrop-blur-lg flex flex-col items-center gap-6">
+      <h3 className="text-3xl sm:text-4xl font-bold text-center">Mint Akatsuki Unleashed NFTs</h3>
+
+      <p className="text-sm text-white opacity-70 mt-1">Select collection</p>
+
+      {/* Selection buttons */}
+      <div className="flex justify-center gap-4">
+        <button
+          onClick={() => setSelected("membership")}
+          className={`px-6 py-2 text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 ${
+            selected === "membership"
+              ? "bg-white text-black shadow"
+              : "border border-red-600 text-white hover:bg-red-900"
+          }`}
+        >
+          Akatsuki NFT
+        </button>
+        <button
+          onClick={() => setSelected("1/1")}
+          className={`px-6 py-2 text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 ${
+            selected === "1/1"
+              ? "bg-white text-black shadow"
+              : "border border-red-600 text-white hover:bg-red-900"
+          }`}
+        >
+          1/1 Legendary
+        </button>
       </div>
+
+      {/* Image */}
+      <div className="rounded-lg p-1">
+        <img
+          src={selected === "membership" ? "/img/og.png" : "/img/legendary.png"}
+          alt={selected === "membership" ? "Akatsuki NFT" : "Legendary NFT"}
+          className="w-[550px] rounded-md shadow-lg border-4 border-red-900"
+        />
+      </div>
+
+      {/* Mint button */}
+      <a
+        href={
+          selected === "membership"
+            ? "https://launchmynft.io/sol/16225"
+            : "https://launchmynft.io/sol/16223"
+        }
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full max-w-[550px]"
+      >
+        <button className="w-full py-4 mt-4 bg-red-700 hover:bg-red-900 text-white text-lg font-bold rounded-xl shadow-lg">
+          {selected === "membership" ? "Mint Akatsuki Unleashed" : "Mint 1/1 Legendary"}
+        </button>
+      </a>
+
+      <span className="animate-pulse text-lg sm:text-xl font-bold text-white">
+        Mint is Live
+      </span>
+
+      <div className="text-center text-sm text-white opacity-80">
+        Requirement: {selected === "membership" ? "0.3 SOL" : "1 SOL"}
+      </div>
+    </div>
+  </div>
+</div>
+
        {/* Legg til bildet her */}
         <div className="w-full flex justify-center my-8">
           <img src='/img/unleasheds.gif' alt="Static banner" className="max-w-full rounded-lg shadow-lg" />
