@@ -122,6 +122,7 @@ export default function Home() {
           <p className="mb-4">Inspired by the iconic Akatsuki, this group offers unparalleled networking and trading opportunities for serious investors.</p>
           <p>Secure your NFT pack to join the trenches and elevate your crypto game!</p>
         </div>
+        <div id="mint" className="w-full max-w-3xl border-[4px] border-akatsukiRed ...">
   {/* your mint content */}
 </div>
 
