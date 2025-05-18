@@ -188,7 +188,7 @@ export default function Home() {
         </button>
       </a>
 
-      <span className="animate-pulse text-lg sm:text-xl font-bold text-white">
+      <span className="animate-pulse text-lg sm:text-xl font-bold text-akatsukiRed">
         Mint is Live
       </span>
 
